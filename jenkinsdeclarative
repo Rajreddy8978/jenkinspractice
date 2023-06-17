@@ -36,7 +36,8 @@ pipeline {
             	sh 'sudo rm -rf /var/www/html/pord/*'
             	sh 'sudo rm -rf /var/www/html/prod/.git'
             	sh 'sudo systemctl start httpd'
-            	sh 'sudo git clone -f https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/prod'
+            	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/prod'
+		sh 'sudo mv prod /var/www/html
          	}
     	}   	 
 	}
