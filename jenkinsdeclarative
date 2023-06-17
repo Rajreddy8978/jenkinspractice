@@ -32,7 +32,7 @@ pipeline {
     	}
     	stage('Production'){
         	steps {
-   	        sh 'sudo mkdir -p /var/www/html/prod'
+   	        sh 'sudo mkdir /var/www/html/prod'
             	sh 'sudo rm -rf /var/www/html/pord/*'
             	sh 'sudo rm -rf /var/www/html/prod/.git'
             	sh 'sudo systemctl start httpd'
