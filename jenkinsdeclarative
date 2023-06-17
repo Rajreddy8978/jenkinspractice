@@ -14,7 +14,7 @@ pipeline {
     	}
     	stage('Development'){
         	steps {
-   	        sh 'sudo mkdir /var/www/html/dev'
+   	        sh 'sudo rmdir /var/www/html/dev
             	sh 'sudo rm -rf /var/www/html/dev/*'
             	sh 'sudo rm -rf /var/www/html/dev/.git'
             	sh 'sudo systemctl start httpd'
