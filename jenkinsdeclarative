@@ -32,11 +32,11 @@ pipeline {
     	}
     	stage('Production'){
         	steps {
-   	        sh 'sudo mkdir /var/www/html/prod'
-            	sh 'sudo rm -rf /var/www/html/pord/*'
-            	sh 'sudo rm -rf /var/www/html/prod/.git'
+   	        sh 'sudo mkdir /var/www/html/production'
+            	sh 'sudo rm -rf /var/www/html/production/*'
+            	sh 'sudo rm -rf /var/www/html/production/.git'
             	sh 'sudo systemctl start httpd'
-            	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/prod'
+            	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/production'
          	}
     	}   	 
 	}
