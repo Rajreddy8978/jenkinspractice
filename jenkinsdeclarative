@@ -15,7 +15,7 @@ pipeline {
     	stage('Development'){
         	steps {
    	        sh 'sudo rm -rf /var/www/html/dev/'
-   		sh 'sudo mkdir /var/www/html/dev/'
+   		sh 'sudo mkdir -p /var/www/html/dev/'
             	sh 'sudo systemctl start httpd'
 		sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/dev'
         	}
@@ -23,7 +23,7 @@ pipeline {
     	stage('QA'){
         	steps {
    	        sh 'sudo rm -rf /var/www/html/qa'
-            	sh 'sudo mkdir /var/www/html/qa'
+            	sh 'sudo mkdir -p /var/www/html/qa'
             	sh 'sudo systemctl start httpd'
             	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/qa'
         	}
@@ -31,7 +31,7 @@ pipeline {
     	stage('Production'){
         	steps {
    	        sh 'sudo rm -rf /var/www/html/prod'
-            	sh 'sudo mkdir /var/www/html/prod'
+            	sh 'sudo mkdir -p /var/www/html/prod'
             	sh 'sudo systemctl start httpd'
             	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/prod'
          	}
