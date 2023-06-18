@@ -14,29 +14,26 @@ pipeline {
     	}
     	stage('Development'){
         	steps {
-   	        sh 'sudo mkdir -p /var/www/html/dev'
-            	sh 'sudo rm -rf /var/www/html/dev/*'
-            	sh 'sudo rm -rf /var/www/html/dev/.git'
+   	        sh 'sudo rm -rf /var/www/html/dev/'
+   		sh 'sudo mkdir /var/www/html/dev/'
             	sh 'sudo systemctl start httpd'
-            	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/dev'
+		sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/dev'
         	}
     	}
     	stage('QA'){
         	steps {
-   	        sh 'sudo mkdir -p /var/www/html/qa'    
-            	sh 'sudo rm -rf /var/www/html/qa/*'
-            	sh 'sudo rm -rf /var/www/html/qa/.git'
+   	        sh 'sudo rm -rf /var/www/html/qa'
+            	sh 'sudo mkdir /var/www/html/qa'
             	sh 'sudo systemctl start httpd'
             	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/qa'
         	}
     	}
     	stage('Production'){
         	steps {
-   	        sh 'sudo mkdir /var/www/html/production'
-            	sh 'sudo rm -rf /var/www/html/production/*'
-            	sh 'sudo rm -rf /var/www/html/production/.git'
+   	        sh 'sudo rm -rf /var/www/html/prod'
+            	sh 'sudo mkdir /var/www/html/prod'
             	sh 'sudo systemctl start httpd'
-            	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/production'
+            	sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/prod'
          	}
     	}   	 
 	}
