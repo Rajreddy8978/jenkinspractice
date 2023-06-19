@@ -17,7 +17,7 @@ pipeline {
    	        sh 'sudo rm -rf /var/www/html/dev/'
    		sh 'sudo mkdir -p /var/www/html/dev/'
             	sh 'sudo systemctl start httpd'
-		sh 'sudo git clone https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/dev'
+		sh 'sudo git clone --branch master https://github.com/Rajreddy8978/jenkinspractice.git /var/www/html/dev'
         	}
     	}
     	stage('QA'){
